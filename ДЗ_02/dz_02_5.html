@@ -1,0 +1,34 @@
+<script>   
+    "use strict";
+
+    /**
+     *Функция призводит операции над числами arg1, arg2
+     */
+    function mathOperation(arg1, arg2, operation) {
+
+
+        switch (operation) {
+            case 'сумма':
+                return arg1 + arg2;
+            case 'разница':
+                return arg1 - arg2;
+            case 'умножение':
+                return arg1 * arg2;
+            case 'деление':
+                return arg1 / arg2;
+             default:
+                return "Операция не определена";       
+        }
+        return day;
+
+    }
+
+    let a = 20;
+    let b = 10;
+
+    alert(`Сумма чисел ${a} и ${b} равна: ${mathOperation(a, b, 'сумма')}`);
+    alert(`Разность чисел ${a} и ${b} равна: ${mathOperation(a, b, 'разница')}`);
+    alert(`Произведение чисел ${a} и ${b} равно: ${mathOperation(a, b, 'умножение')}`);
+    alert(`Частное чисел ${a} и ${b} равно: ${mathOperation(a, b, 'деление')}`);
+
+</script> 
