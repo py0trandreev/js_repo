@@ -1,0 +1,36 @@
+<script>   
+    "use strict";
+
+    /* es5 */
+    function Post(author, text, date){
+        this.author = author;
+        this.text = text;
+        this.date = date;
+    }
+
+    Post.prototype.edit = function(text){
+        this.text = text;
+    }
+
+    function AttachedPost(author, text, date){
+        Post.call(this, author, text, date);
+        this.highlighted = false;
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype);
+    AttachedPost.prototype.constructor = AttachedPost;
+
+
+    AttachedPost.prototype.makeTextHighlighted = function(){
+        this.highlighted = true;
+    }
+
+    let atpostObj = new AttachedPost("John", "some text", "2021-10-06");
+    atpostObj.edit("another text");
+    atpostObj.makeTextHighlighted();
+
+    console.log(atpostObj.text);
+    console.log(atpostObj.highlighted);
+
+
+</script> 

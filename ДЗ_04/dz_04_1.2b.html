@@ -1,0 +1,38 @@
+<script>   
+    "use strict";
+
+    /* es6 */
+    class Post{
+        constructor(author, text, date){
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        edit(text){
+            this.text = text;
+        }
+    }
+
+
+    class AttachedPost extends Post{
+        constructor(author, text, date){
+            super(author, text, date);
+            this.highlighted = false;    
+        }
+
+        makeTextHighlighted(){
+        this.highlighted = true;
+        }
+    }
+
+
+    let atpostObj = new AttachedPost("John", "some text", "2021-10-06");
+    atpostObj.edit("another text");
+    atpostObj.makeTextHighlighted();
+
+    console.log(atpostObj.text);
+    console.log(atpostObj.highlighted);
+
+
+</script> 

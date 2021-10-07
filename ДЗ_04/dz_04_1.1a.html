@@ -1,0 +1,18 @@
+<script>   
+    "use strict";
+
+    /* es5 */
+    function Product(name, price){
+        this.name = name;
+        this.price = price;
+    }
+
+    Product.prototype.make25PercentDiscount = function(){
+        this.price = this.price * (1 - 0.25);
+    }
+
+    let pro1 = new Product("prod1", 125);
+    pro1.make25PercentDiscount();
+    console.log(pro1.price);
+
+</script> 
